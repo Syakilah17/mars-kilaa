@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mars_kilaa.databinding.ActivityMainBinding
 import com.example.mars_kilaa.pertemuan4.FourthActivity
+import com.example.mars_kilaa.pertemuan5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,9 +43,15 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("age", 25)
 
             startActivity(intent)
-            finish()
+        }
+
+        // Berpindah ke FifthActivity saat btnToFifth diklik
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
         }
     }
+
     override fun onStart() {
         super.onStart()
         Log.e("onStart", "onStart: {MainActivity} terlihat di layar")
