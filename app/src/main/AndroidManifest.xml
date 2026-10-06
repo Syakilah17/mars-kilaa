@@ -14,16 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Marskilaa">
 
-        <!-- AuthActivity (Halaman Pertama Kali Muncul) -->
+        <!-- SplashScreenActivity sebagai LAUNCHER -->
         <activity
-            android:name=".AuthActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- AuthActivity -->
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- MainActivity -->
         <activity
@@ -31,32 +36,27 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- SecondActivity -->
         <activity
             android:name=".pertemuan2.SecondActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- ThirdActivity -->
         <activity
             android:name=".pertemuan3.ThirdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- FourthActivity -->
         <activity
             android:name=".pertemuan4.FourthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- FifthActivity -->
         <activity
             android:name=".pertemuan5.FifthActivity"
             android:exported="false"
             android:theme="@style/Theme.Marskilaa"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- WebViewActivity -->
         <activity
             android:name=".pertemuan5.WebViewActivity"
             android:exported="false"
