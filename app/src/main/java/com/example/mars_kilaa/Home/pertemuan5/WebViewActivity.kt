@@ -1,5 +1,6 @@
-package com.example.mars_kilaa.pertemuan5
+package com.example.mars_kilaa.Home.pertemuan5
 
+import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
@@ -49,7 +50,7 @@ class WebViewActivity : AppCompatActivity() {
 
     // 5. Navigasi Tombol Panah Kembali di Toolbar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
+        if (item.itemId == R.id.home) {
             onBackPressedDispatcher.onBackPressed()
             return true
         }

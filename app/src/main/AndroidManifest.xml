@@ -14,54 +14,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Marskilaa">
 
-        <!-- SplashScreenActivity sebagai LAUNCHER -->
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
-        <!-- AuthActivity -->
         <activity
             android:name=".AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan2.SecondActivity"
+            android:name=".Home.pertemuan2.SecondActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan3.ThirdActivity"
+            android:name=".Home.pertemuan3.ThirdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan4.FourthActivity"
+            android:name=".Home.pertemuan4.FourthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan5.FifthActivity"
+            android:name=".Home.pertemuan5.FifthActivity"
             android:exported="false"
             android:theme="@style/Theme.Marskilaa"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan5.WebViewActivity"
+            android:name=".Home.pertemuan5.WebViewActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".Home.Pertemuan6.SixthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- BaseActivity sebagai Launcher tunggal -->
+        <activity
+            android:name=".BaseActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

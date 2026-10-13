@@ -10,8 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mars_kilaa.databinding.ActivityMainBinding
-import com.example.mars_kilaa.pertemuan4.FourthActivity
-import com.example.mars_kilaa.pertemuan5.FifthActivity
+import com.example.mars_kilaa.Home.pertemuan4.FourthActivity
+import com.example.mars_kilaa.Home.pertemuan5.FifthActivity
+import com.example.mars_kilaa.Home.Pertemuan6.SixthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +47,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToFifth.setOnClickListener {
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Tombol menuju Pertemuan 6 (SixthActivity)
+        binding.btnPertemuan6.setOnClickListener {
+            val intent = Intent(this, SixthActivity::class.java)
             startActivity(intent)
         }
 
