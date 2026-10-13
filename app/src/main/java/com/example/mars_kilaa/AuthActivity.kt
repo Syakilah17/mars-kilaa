@@ -19,7 +19,7 @@ class AuthActivity : AppCompatActivity() {
         // 2. Cek apakah pengguna sudah login sebelumnya
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish()
             return
@@ -44,7 +44,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.apply()
 
                 // Pindah ke MainActivity
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
