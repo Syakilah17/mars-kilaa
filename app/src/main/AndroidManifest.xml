@@ -14,9 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Marskilaa">
 
+        <!-- SplashScreenActivity dikembalikan menjadi LAUNCHER utama -->
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".AuthActivity"
             android:exported="false"
@@ -51,26 +58,19 @@
             android:name=".Home.Pertemuan6.SixthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.pertemuan10.TenthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Menjadikan TutorialMessageActivity sebagai LAUNCHER utama -->
+        <!-- TutorialMessageActivity dikembalikan menjadi Activity biasa -->
         <activity
             android:name=".Message.tutorial.TutorialMessageActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 
