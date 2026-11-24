@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.mars_kilaa.Note.NoteFragment
 import com.example.mars_kilaa.Home.HomeFragment
 import com.example.mars_kilaa.Message.MessageFragment
 import com.example.mars_kilaa.More.MoreFragment
-import com.example.mars_kilaa.R
 import com.example.mars_kilaa.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -38,6 +38,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.message -> {
                     replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 R.id.more -> {

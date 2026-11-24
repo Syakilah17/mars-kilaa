@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mars_kilaa.AuthActivity
 import com.example.mars_kilaa.Home.pertemuan4.FourthActivity
@@ -104,36 +103,31 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadCatFact() {
-        binding.tvCatFact.text = "Loading cat fact..."
-        lifecycleScope.launch {
+        _binding?.tvCatFact?.text = "Loading cat fact..."
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val response = CatFactApiClient.apiService.getCatFact()
                 Log.e("RESPONSE", response.toString())
-                binding.tvCatFact.text = "\"${response.fact}\""
+                _binding?.tvCatFact?.text = "\"${response.fact}\""
             } catch (e: Exception) {
-                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+                _binding?.tvCatFact?.text = "Gagal mengambil fakta kucing."
             }
         }
     }
 
     private fun loadPhoto() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val photos = PhotoApiClient.apiService.getPhotos()
-                val adapter = PhotoAdapter(photos)
-                binding.rvGallery.adapter = adapter
-
-                /** List Tampil Vertical */
-                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
-
-                /** List Tampil Horizontal */
-                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-                /** List Tampil Grid */
-                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(), 2)
-
+                if (_binding != null && isAdded) {
+                    val adapter = PhotoAdapter(photos)
+                    binding.rvGallery.adapter = adapter
+                    binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+                }
             } catch (e: Exception) {
-                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+                if (isAdded) {
+                    Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
